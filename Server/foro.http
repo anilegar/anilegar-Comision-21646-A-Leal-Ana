@@ -1,0 +1,28 @@
+### Consultar
+GET http://localhost:3000/api/foro
+
+### crear entrada del foro
+POST http://localhost:3000/api/foro
+Content-Type: application/json
+
+{
+    "title": "",
+    "description": "",
+    "poster": ""
+}
+
+### modificar entrada del foro
+PUT http://localhost:3000/api/foro/7
+Content-Type: application/json
+
+{
+    "title": "",
+    "description": "",
+    "poster": ""
+}
+
+### eliminar entrada del foro
+DELETE http://localhost:3000/api/foro/2
+
+
+

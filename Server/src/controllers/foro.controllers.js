@@ -1,13 +1,18 @@
-import { TaskModel } from "../models/Tasks.js"
+import { ForoModel } from "../models/Foro.js";
 
+ForoModel
 
+//Controlador para mostrar la vista
+export const ctrlView = (req, res) => {
+    res.render('index.ejs')
+}
 
-// controlador para traer las tareas
-export const ctrlGetTask = async (req, res) =>  {
+// controlador para traer las Entradas del foro
+export const ctrlGetForo = async (req, res) =>  {
     try {
-        const task = await TaskModel.findAll();
-        if (!task) return res.status(404)
-        return res.status(200).json(task)
+        const foro = await ForoModel.findAll();
+        if (!foro) return res.status(404)
+        return res.status(200).json(foro)
     } catch (error) {
         console.error(error)
         return res.status(500).json({
@@ -16,11 +21,11 @@ export const ctrlGetTask = async (req, res) =>  {
     }
 
 }
-// controlador para crear  las tareas
-export const ctrlCreateTask = async (req, res) =>  {
+// controlador para crear  las Entradas del foro
+export const ctrlCreateForo = async (req, res) =>  {
     try {
-        const newTask = await TaskModel.create(req.body);
-        return res.status(201).json(newTask)
+        const newForo = await ForoModel.create(req.body);
+        return res.status(201).json(newForo)
     } catch (error) {
         console.error(error)
         return res.status(500).json({
@@ -29,12 +34,12 @@ export const ctrlCreateTask = async (req, res) =>  {
     }
 }
 
-// controlador para modificar las tareas
-export const ctrlUpdateTask = async (req, res) =>  {
+// controlador para modificar las Entradas del foro
+export const ctrlUpdateForo = async (req, res) =>  {
     const { id } = req.params
     try {
-            const task = await TaskModel.findByPk(id)
-            if (!task) {
+            const foro = await ForoModel.findByPk(id)
+            if (!foro) {
                 return res.status(404).json({
                     message: 'Tarea no encontrada'
                 })
@@ -50,22 +55,22 @@ export const ctrlUpdateTask = async (req, res) =>  {
 }
 }
 
-// controlador para eliminar las tareas
-export const ctrlDeleteTask = async (req, res) =>  {
+// controlador para eliminar las Entradas del foro
+export const ctrlDeleteForo = async (req, res) =>  {
     const { id } = req.params
     try {
-        const taskDeleted = await TaskModel.destroy({
+        const foroDeleted = await ForoModel.destroy({
              where : {
                 id : id
              }
             })
-            if (!taskDeleted) {
+            if (!foroDeleted) {
                 return res.status(404).json({
-                    message: 'Tarea no encontrada'
+                    message: 'Entrada no encontrada'
                 })
             }
             return res.status(200).json({
-                message: 'Tarea Eliminada'
+                message: 'Foro Eliminado'
             })
     } catch (error) {   
         console.error(error)

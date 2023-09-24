@@ -6,7 +6,7 @@ import { sequelize } from "../config/database.js";
 
 
 
-export const TaskModel = sequelize.define('Task', {
+export const ForoModel = sequelize.define('Foro', {
     title: {
         type: DataTypes.STRING,
         allowNull: true
@@ -19,7 +19,7 @@ export const TaskModel = sequelize.define('Task', {
         type: DataTypes.STRING,
         allowNull: true
     }
-},{
+}, {
     timestamps: true
 })
 
