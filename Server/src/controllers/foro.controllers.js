@@ -2,10 +2,20 @@ import { ForoModel } from "../models/Foro.js";
 
 ForoModel
 
-//Controlador para mostrar la vista
-export const ctrlView = (req, res) => {
-    res.render('index.ejs')
+//controlador para mostrar la vista
+export const ctrlView = async (req, res) => {
+    try {
+        const foro = await ForoModel.findAll();
+        res.render('index.ejs', {foro})
+    } catch (error) {
+        console.error(error)
+        return res.status(500).json({
+            messge: 'Error Server'
+        })
+    }   
 }
+
+
 
 // controlador para traer las Entradas del foro
 export const ctrlGetForo = async (req, res) =>  {
@@ -44,8 +54,8 @@ export const ctrlUpdateForo = async (req, res) =>  {
                     message: 'Tarea no encontrada'
                 })
             }
-            task.update(req.body)
-            return res.status(200).json(task)
+            foro.update(req.body)
+            return res.status(200).json(foro)
         
     } catch (error) {   
         console.error(error)
