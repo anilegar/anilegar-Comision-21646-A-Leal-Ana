@@ -21,7 +21,7 @@ Content-Type: application/json
     "poster": ""
 }
 
-### eliminar entrada del foro
+### eliminar entrada del foro new
 DELETE http://localhost:3000/api/foro/2
 
 
