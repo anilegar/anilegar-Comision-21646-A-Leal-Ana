@@ -1,8 +1,10 @@
 <%- include('partials/header') -%>
   <header class="d-flex justify-content-center">
-    <h1>
-      FORO MULTITEMATICO
-    </h1>
+      
+  <h1>
+        FORO MULTITEMATICO
+      </h1>
+
   </header>
   <!-- columnas -->
   <main class="d-flex flex-column align-items-center mb-3">
@@ -10,24 +12,31 @@
 
     <div class="container text-center">
       <div class="row" id="container">
-            <% foro.forEach(foro => { %>
-          
+        <% foro.forEach(foro=> { %>
 
-        <div class="col-4 d-flex justify-content-center mb-3" data-id ="<%= foro.id %>">
+
+          <div class="col-4 d-flex justify-content-center mb-3" data-id="<%= foro.id %>">
             <div class="card" style="width: 18rem;">
               <img src="<%= foro.poster %>" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title"></h5> <%= foro.title %> </h5>
-                <p class="card-text" ></p><%= foro.description %> </p>
-                  <button  class="btn btn-primary" id="btn-edit">Editar </button>
-                  <button type = "" class="btn btn-primary" id="btn-delete"> Borrar </button>
-                </div>
+                <h5 class="card-title"></h5>
+                <%= foro.title %>
+                  </h5>
+                  <p class="card-text"><%= foro.description %></p>
+
+                  <p class="card-text">Fecha de creación: <%= new Date(foro.createdAt).toLocaleString() %>
+
+              
+                    
+                    <button class="btn btn-primary" id="btn-edit">Editar </button>
+                    <button type="" class="btn btn-primary" id="btn-delete"> Borrar </button>
               </div>
             </div>
-          </div>        
-          
-        <% }) %>
-       
+          </div>
+      </div>
+
+      <% }) %>
+
 
         <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -50,17 +59,17 @@
                     <label for="imputPoster" class="col-form-label">URL:</label>
                     <input type="text" class="form-control" id="imputPoster">
                   </div>
-                    <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-bs-dismiss = "modal"> Cerrar </button>
-                     <button type="submit" class="btn btn-primary" id="btn-save"></button>
-                    </div>
+                  <div class="modal-footer">
+                    <button class="button" type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cerrar
+                    </button>
+                    <button class="button" type="submit" class="btn btn-primary" id="btn-save"></button>
+                  </div>
                 </form>
               </div>
-              </div>               
             </div>
           </div>
         </div>
+    </div>
   </main>
 
-<%- include('partials/footer') -%>
-
+  <%- include('partials/footer') -%>

@@ -1,8 +1,32 @@
-*{
-    background-color: pink;
+/* * estilos generales   */
+body{
+    background-color: violet;
+    display: flexbox;
+
+
 }
 
-.titulo{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: xx-large;
+
+.btn-primary{
+    background-color: blueviolet;
+    font-family: 'Franklin Gothic Medium';
+    color: black;
+    font-style: bold;
+} 
+h1{
+    color: blueviolet;
+}
+
+
+.card{
+    color: violet;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium';
+}
+
+
+.card-text{
+    color: black;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium';
 }

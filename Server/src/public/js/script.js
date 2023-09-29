@@ -144,28 +144,3 @@ form.addEventListener("submit", (event) => {
     })
   }
 });
-
-
-// fetch('http://localhost:3000/api/foro')
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data)
-//         data.forEach(foro => {
-//             html += `
-//             <div class="col-4 d-flex justify-content-center mb-3" data-id ="${foro.id}">
-//             <div class="card" style="width: 18rem;">
-//               <img src="${foro.poster}" class="card-img-top" alt="...">
-//               <div class="card-body">
-//                 <h5 class="card-title">${foro.title}</h5>
-//                 <p class="card-text">${foro.description}</p>
-//                 <
-//                   <button  class="btn btn-primary" id="btn-edit">Editar </button>
-//                   <button type = "" class="btn btn-primary" id="btn-delete"> Borrar </button>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>            
-//             `
-//                 contenedor.innerHTML = html;    
-//         });  
-//     })
